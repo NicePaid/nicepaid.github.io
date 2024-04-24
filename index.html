@@ -1,22 +1,57 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сайт</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebApp for Telegram Bot</title>
+    <style>
+        /* CSS стилизация может быть добавлена здесь */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <header>
+    <header>
+        <h1>WebApp for Telegram Bot</h1>
+    </header>
     <nav>
-      <ul>
-        <li><a href="#">Каналы</a></li>
-        <li><a href="#">Подписки</a></li>
-        <li><a href="#">Инфо</a></li>
-        <li><a href="#">Настройки</a></li>
-      </ul>
+        <a href="#channels">Каналы</a>
+        <a href="#subscriptions">Подписка</a>
+        <a href="#payments">Выплаты</a>
+        <a href="#settings">Настройки</a>
     </nav>
-  </header>
-  <!-- Здесь будет основное содержимое сайта -->
+    <div class="content">
+        <h2>Добро пожаловать!</h2>
+        <p>Это одностраничный сайт для веб-приложения вашего телеграм-бота.</p>
+        <!-- Здесь можно добавить дополнительное содержимое страницы -->
+    </div>
 </body>
 </html>
