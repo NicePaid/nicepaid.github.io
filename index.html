@@ -3,59 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebApp for Telegram Bot</title>
+    <title>Telegram Web App</title>
+    <!-- Подключение стилей оформления Telegram -->
+    <link rel="stylesheet" href="https://telegram.org/css/telegram.css">
     <style>
-        /* CSS стилизация */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        .menu {
-            background-color: #444;
-            padding: 10px;
-            text-align: center;
-            width: 100%;
-        }
-        .menu-item {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            display: block;
-        }
-        .menu-item:hover {
-            background-color: #555;
-        }
+        /* Общие стили для контента */
         .content {
             padding: 20px;
             text-align: center;
         }
+
+        /* Адаптивный дизайн */
+        /* При ширине экрана до 600px */
+        @media (max-width: 600px) {
+            /* Пример: изменение размеров и расположения элементов */
+            .content {
+                padding: 10px;
+            }
+        }
+
+        /* При ширине экрана более 600px */
+        @media (min-width: 601px) {
+            /* Пример: изменение размеров и расположения элементов */
+            .content {
+                padding: 40px;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>WebApp for Telegram Bot</h1>
+    <header class="tg-header">
+        <!-- Верхняя панель Telegram -->
     </header>
-    <div class="menu">
-        <div class="menu-item"><a href="#channels">Каналы</a></div>
-        <div class="menu-item"><a href="#subscriptions">Подписка</a></div>
-        <div class="menu-item"><a href="#payments">Выплаты</a></div>
-        <div class="menu-item"><a href="#settings">Настройки</a></div>
-    </div>
     <div class="content">
-        <h2>Добро пожаловать!</h2>
-        <p>Это одностраничный сайт для веб-приложения вашего телеграм-бота.</p>
-        <!-- Здесь можно добавить дополнительное содержимое страницы -->
+        <h1>Привет, мир!</h1>
+        <p>Это ваше веб-приложение Telegram.</p>
     </div>
+    <footer class="tg-footer">
+        <!-- Нижняя панель Telegram -->
+    </footer>
 </body>
 </html>
