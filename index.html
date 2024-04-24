@@ -3,44 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram Web App</title>
-    <!-- Подключение стилей оформления Telegram -->
-    <link rel="stylesheet" href="https://telegram.org/css/telegram.css">
+    <title>Веб-приложение для Telegram</title>
     <style>
-        /* Общие стили для контента */
-        .content {
+        /* CSS стилизация */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .block {
+            background-color: #fff;
+            margin: 10px;
             padding: 20px;
-            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        /* Адаптивный дизайн */
-        /* При ширине экрана до 600px */
-        @media (max-width: 600px) {
-            /* Пример: изменение размеров и расположения элементов */
-            .content {
-                padding: 10px;
-            }
+        .menu-item {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
         }
-
-        /* При ширине экрана более 600px */
-        @media (min-width: 601px) {
-            /* Пример: изменение размеров и расположения элементов */
-            .content {
-                padding: 40px;
-            }
+        .menu-item:last-child {
+            border-bottom: none;
         }
     </style>
 </head>
 <body>
-    <header class="tg-header">
-        <!-- Верхняя панель Telegram -->
-    </header>
-    <div class="content">
-        <h1>Привет, мир!</h1>
-        <p>Это ваше веб-приложение Telegram.</p>
+    <div class="block">
+        <h2>Профиль автора</h2>
+        <ul class="menu">
+            <li class="menu-item">Выплаты</li>
+            <li class="menu-item">Статистика</li>
+            <li class="menu-item">Еще</li>
+        </ul>
     </div>
-    <footer class="tg-footer">
-        <!-- Нижняя панель Telegram -->
-    </footer>
-</body>
-</html>
+
+    <div class="block">
+        <h2>Начало работы</h2>
+        <!-- Здесь может быть дополнительный контент -->
+    </div>
+
+    <div class="block">
+        <h2>Каналы и группы</h2>
+        <!-- Здесь может быть доп
+    </div>
+
+    <div class="block">
+        <h2>Donate</h2>
+    </div>
+    </body>
+    </html>
