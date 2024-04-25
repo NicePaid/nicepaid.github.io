@@ -24,6 +24,10 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row; /* Горизонтальное расположение элементов */
+            align-items: center; /* Выравнивание элементов по центру */
+            justify-content: space-between; /* Равномерное распределение пространства между элементами */
         }
 
         .menu {
@@ -31,10 +35,12 @@
             list-style: none;
             margin: 0;
             color: var(--tg-color-scheme);
+            display: flex;
+            flex-direction: row; /* Горизонтальное расположение элементов */
         }
 
         .menu-item {
-            padding: 10px 0;
+            padding: 10px;
             border-bottom: 1px solid var(--tg-color-scheme-border);
         }
 
