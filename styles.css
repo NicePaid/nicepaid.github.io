@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.wallet-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.balance {
+    margin-bottom: 20px;
+}
+
+button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input, button {
+    margin-top: 5px;
+}
+
+#transaction-status {
+    margin-top: 10px;
+    font-weight: bold;
+    color: green;
+}
