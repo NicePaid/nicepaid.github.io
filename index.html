@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Wallet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wallet-container">
+        <h1>My Telegram Wallet</h1>
+        <div class="balance">Balance: <span id="balance">0</span> BTC</div>
+        <button onclick="refreshBalance()">Refresh Balance</button>
+        <form id="transaction-form">
+            <input type="text" id="recipient" placeholder="Recipient">
+            <input type="number" id="amount" placeholder="Amount">
+            <button type="submit">Send</button>
+        </form>
+        <div id="transaction-status"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
