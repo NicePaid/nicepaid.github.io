@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram Wallet</title>
+    <title>Telegram-like Web App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="wallet-container">
-        <h1>My Telegram Wallet</h1>
-        <div class="balance">Balance: <span id="balance">0</span> BTC</div>
-        <button onclick="refreshBalance()">Refresh Balance</button>
-        <form id="transaction-form">
-            <input type="text" id="recipient" placeholder="Recipient">
-            <input type="number" id="amount" placeholder="Amount">
-            <button type="submit">Send</button>
-        </form>
-        <div id="transaction-status"></div>
+    <div class="telegram-app">
+        <div class="telegram-header">
+            <span class="telegram-logo">Telegram</span>
+        </div>
+        <div class="telegram-body">
+            <div class="telegram-main">
+                <div class="telegram-section">
+                    <h2>Баланс пользователя</h2>
+                    <div class="telegram-content">Ваш баланс: $100</div>
+                </div>
+                <div class="telegram-section">
+                    <h2>Начало работы</h2>
+                    <div class="telegram-content">Добро пожаловать!</div>
+                </div>
+                <div class="telegram-section">
+                    <h2>Цифровые товары</h2>
+                    <div class="telegram-content">
+                        <div class="telegram-subsection">
+                            <h3>Каналы</h3>
+                            <p>Какой-то канал</p>
+                            <p>Еще один канал</p>
+                        </div>
+                        <div class="telegram-subsection">
+                            <h3>Группы</h3>
+                            <p>Какая-то группа</p>
+                            <p>Еще одна группа</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="telegram-section">
+                    <h2>Транзакции</h2>
+                    <div class="telegram-content">Отображение последних транзакций...</div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
