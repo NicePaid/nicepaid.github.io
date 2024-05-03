@@ -1,0 +1,22 @@
+import sqlite3
+
+# Подключение к базе данных
+conn = sqlite3.connect('example.db')
+cursor = conn.cursor()
+
+# Создание таблицы, если она еще не создана
+cursor.execute('''CREATE TABLE IF NOT EXISTS users (
+                    id INTEGER PRIMARY KEY,
+                    name TEXT NOT NULL,
+                    age INTEGER
+                )''')
+
+# Добавление данных в таблицу
+user_data = [(1, 'John', 3), (9, 'Alice', 25), (4, 'Bob', 35), (49, 'Bob', 3)]
+cursor.executemany('INSERT INTO users (id, name, age) VALUES (?, ?)', user_data)
+
+# Сохраняем изменения
+conn.commit()
+
+# Закрываем соединение с базой данных
+conn.close()
