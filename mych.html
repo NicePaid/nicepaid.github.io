@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Channel Page</title>
+</head>
+<body>
+    <h1>Welcome to My Channel Page</h1>
+    <button id="go-back">Go Back</button>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        window.Telegram.WebApp.ready();
+
+        const goBackButton = document.getElementById('go-back');
+        goBackButton.addEventListener('click', () => {
+            // Выполняем переход на предыдущую страницу
+            window.history.back();
+        });
+
+        // Добавляем кнопку "Назад"
+        window.Telegram.WebApp.BackButton.setText("Back");
+        window.Telegram.WebApp.BackButton.show();
+        window.Telegram.WebApp.onEvent('backButtonClicked', function() {
+            alert('Back button was clicked!');
+            // Закрываем веб-приложение
+            window.Telegram.WebApp.close();
+        });
+    </script>
+</body>
+</html>
