@@ -7,31 +7,28 @@
 </head>
 <body>
     <h1>MyCH Page</h1>
-
-    <!-- Кнопка для возврата назад -->
-    <button id="go-back">Go Back</button>
+    
+    <!-- Кнопка "Назад" -->
+    <button id="back-button">Back</button>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         window.Telegram.WebApp.ready();
 
-        const goBackButton = document.getElementById('go-back');
-        goBackButton.addEventListener('click', () => {
-            window.history.back(); // Вернуться на предыдущую страницу
-        });
-
-        // Проверяем, отображается ли кнопка "назад" в Telegram WebApp
+        // Отобразить кнопку "Назад"
         var BackButton = WebApp.BackButton;
         BackButton.show();
+
+        // Добавить обработчик события нажатия на кнопку "Назад"
         BackButton.onClick(function() {
-            WebApp.showAlert("Нет пути назад!");
+            WebApp.showAlert("BackButton clicked");
             BackButton.hide();
         });
-        
+
+        // Добавить обработчик события "Назад" браузера
         WebApp.onEvent('backButtonClicked', function() {
-            // Обработка события нажатия на кнопку "назад"
-            // Вставьте сюда ваш код
-            console.log("Back button was clicked in Telegram WebApp");
+            // Действия при нажатии на кнопку "Назад" браузера
+            // Например, перенаправление на другую страницу или другие действия
         });
     </script>
 </body>
