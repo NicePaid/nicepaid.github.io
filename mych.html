@@ -6,10 +6,10 @@
     <title>MyCH Page</title>
 </head>
 <body>
-    <h1>MyCH Page</h1>
+    <h1>MyCH Page_v1</h1>
 
     <!-- Кнопка для возврата назад -->
-    <button id="go-back">Go Back</button>
+    <button id="go-back">Go Back_v1</button>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -22,9 +22,9 @@
 
         // Проверяем, отображается ли кнопка "назад" в Telegram WebApp
         if (window.Telegram.WebApp.BackButton.isVisible) {
-            console.log("Back button is visible in Telegram WebApp");
+            goBackButton.style.display = 'block'; // Отобразить кнопку
         } else {
-            console.log("Back button is not visible in Telegram WebApp");
+            goBackButton.style.display = 'none'; // Скрыть кнопку
         }
     </script>
 </body>
