@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram Web App</title>
+    <title>Telegram WebApp</title>
 </head>
 <body>
     <h1>User Information</h1>
     <div id="user-info"></div>
     <button id="send-data">Send Data</button>
+    
+    <!-- Кнопка для перехода на другую страницу -->
+    <a href="mych.html"><button>Go to MyCH page</button></a>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -35,34 +38,6 @@
         window.Telegram.WebApp.MainButton.show();
         window.Telegram.WebApp.onEvent('mainButtonClicked', function() {
             alert('Main button was clicked!');
-        });
-
-        // Добавляем кнопку "Назад"
-        window.Telegram.WebApp.BackButton.setText("Back");
-        window.Telegram.WebApp.BackButton.show();
-
-        // Определяем isVisible для кнопки "Назад"
-        Object.defineProperty(window.Telegram.WebApp.BackButton, 'isVisible', {
-            get: function () {
-                return this._isVisible;
-            },
-            set: function (value) {
-                this._isVisible = value;
-                if (value) {
-                    this.show();
-                } else {
-                    this.hide();
-                }
-            }
-        });
-
-        // Установка isVisible по умолчанию
-        window.Telegram.WebApp.BackButton.isVisible = true;
-
-        window.Telegram.WebApp.onEvent('backButtonClicked', function() {
-            alert('Back button was clicked!');
-            // Закрываем веб-приложение
-            window.Telegram.WebApp.close();
         });
     </script>
 </body>
