@@ -3,40 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Back Button Example</title>
-    <script src="https://tg.dev/webapi/telegram-web.js"></script>
+    <title>Empty Page</title>
+    <style>
+        /* Стили для позиционирования кнопки "Назад" */
+        .back-button {
+            position: absolute;
+            top: 10px; /* Выберите нужное значение для вертикального положения */
+            left: 10px; /* Выберите нужное значение для горизонтального положения */
+            z-index: 9999; /* Убедитесь, что кнопка находится над всем остальным контентом */
+        }
+    </style>
 </head>
 <body>
-    <h1>Back Button Example</h1>
-    <button id="showBackButton">Show Back Button</button>
-    <button id="hideBackButton">Hide Back Button</button>
+    <h1>This is an Empty Page</h1>
+    <!-- Кнопка "Назад" -->
+    <button class="back-button" onclick="handleBackButtonClick()">Назад</button>
     <script>
-        // При загрузке страницы
-        document.addEventListener("DOMContentLoaded", function() {
-            var BackButton = WebApp.BackButton;
+        var BackButton = WebApp.BackButton;
+        BackButton.hide(); // Скрываем кнопку "Назад", которая обычно появляется по умолчанию
 
-            // Показать кнопку "Назад"
-            document.getElementById('showBackButton').addEventListener('click', function() {
-                BackButton.show();
-            });
+        function handleBackButtonClick() {
+            WebApp.showAlert("BackButton clicked");
+            BackButton.hide();
+        }
 
-            // Скрыть кнопку "Назад"
-            document.getElementById('hideBackButton').addEventListener('click', function() {
-                BackButton.hide();
-            });
-
-            // Обработчик клика на кнопку "Назад"
-            BackButton.onClick(function() {
-                WebApp.showAlert("BackButton clicked");
-                BackButton.hide();
-            });
-
-            // Обработчик события "backButtonClicked"
-            WebApp.onEvent('backButtonClicked', function() {
-                // Здесь можно добавить дополнительный код, который выполнится при нажатии кнопки "Назад"
-                // Например, переход на другую страницу или выполнение каких-либо действий
-                console.log("Native back button clicked");
-            });
+        WebApp.onEvent('backButtonClicked', function() {
+            console.log("Back button clicked on the device");
         });
     </script>
 </body>
