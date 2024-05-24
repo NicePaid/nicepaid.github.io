@@ -1,0 +1,9 @@
+:root {
+    --tg-theme-bg-color: #FFFFFF; /* Цвет фона по умолчанию */
+    --tg-theme-text-color: #000000; /* Цвет текста по умолчанию */
+}
+
+body {
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+}
