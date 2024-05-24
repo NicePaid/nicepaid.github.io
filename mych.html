@@ -7,19 +7,11 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h1>Mych Page</h1>
-    <p id="mych-text">This is the Mych page.</p>
+    <h1 id="mych-title">This is the Mych page.</h1>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         window.Telegram.WebApp.ready();
-
-        const mychText = document.getElementById('mych-text');
-        mychText.addEventListener('click', function() {
-            // Здесь вызываем метод добавления в группу или канал
-            // Например, можно вызвать alert для демонстрации
-            window.Telegram.WebApp.showAlert("Add to group or channel");
-        });
 
         var BackButton = window.Telegram.WebApp.BackButton;
         BackButton.show();
@@ -29,9 +21,12 @@
         });
 
         window.Telegram.WebApp.onEvent('backButtonClicked', function() {
-            // Ваш код обработки события нажатия на кнопку "Назад"
-            // Например, выполнение перехода на предыдущую страницу
             history.back();
+        });
+
+        // Добавляем обработчик для заголовка
+        document.getElementById('mych-title').addEventListener('click', function() {
+            window.Telegram.WebApp.sendData("add_to_group_or_channel");
         });
     </script>
 </body>
