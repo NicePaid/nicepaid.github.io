@@ -3,32 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empty Page</title>
-    <style>
-        /* Стили для позиционирования кнопки "Назад" */
-        .back-button {
-            position: absolute;
-            top: 10px; /* Выберите нужное значение для вертикального положения */
-            left: 10px; /* Выберите нужное значение для горизонтального положения */
-            z-index: 9999; /* Убедитесь, что кнопка находится над всем остальным контентом */
-        }
-    </style>
+    <title>Mych Page</title>
 </head>
 <body>
-    <h1>This is an Empty Page</h1>
-    <!-- Кнопка "Назад" -->
-    <button class="back-button" onclick="handleBackButtonClick()">Назад</button>
+    <h1>Mych Page</h1>
+    <p>This is the Mych page.</p>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        var BackButton = WebApp.BackButton;
-        BackButton.hide(); // Скрываем кнопку "Назад", которая обычно появляется по умолчанию
+        window.Telegram.WebApp.ready();
 
-        function handleBackButtonClick() {
-            WebApp.showAlert("BackButton clicked");
+        var BackButton = window.Telegram.WebApp.BackButton;
+        BackButton.show();
+        BackButton.onClick(function() {
+            window.Telegram.WebApp.showAlert("BackButton clicked");
             BackButton.hide();
-        }
+        });
 
-        WebApp.onEvent('backButtonClicked', function() {
-            console.log("Back button clicked on the device");
+        window.Telegram.WebApp.onEvent('backButtonClicked', function() {
+            // Ваш код обработки события нажатия на кнопку "Назад"
+            // Например, выполнение перехода на предыдущую страницу
+            history.back();
         });
     </script>
 </body>
