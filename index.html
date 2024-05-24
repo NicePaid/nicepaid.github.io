@@ -9,9 +9,7 @@
     <h1>User Information</h1>
     <div id="user-info"></div>
     <button id="send-data">Send Data</button>
-    
-    <!-- Кнопка для перехода на другую страницу -->
-    <a href="mych.html"><button>Go to MyCH page</button></a>
+    <button id="go-to-mych">Go to Mych</button>
 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -26,16 +24,18 @@
                 <p>Last Name: ${user.last_name}</p>
                 <p>Username: ${user.username}</p>
                 <p>ID: ${user.id}</p>
-                <p>is_bot: ${user.is_bot}</p>
-                <p>language_code: ${user.language_code}</p>
-                <p>photo_url: ${user.photo_url}</p>
-                <p>is_premium: ${user.is_premium}</p>
             `;
         }
 
         const sendDataButton = document.getElementById('send-data');
         sendDataButton.addEventListener('click', () => {
             window.Telegram.WebApp.sendData("Hello from Web App");
+        });
+
+        const goToMychButton = document.getElementById('go-to-mych');
+        goToMychButton.addEventListener('click', () => {
+            // Переход на страницу "mych"
+            window.location.href = "mych.html";
         });
 
         window.Telegram.WebApp.MainButton.setText("Click me!");
