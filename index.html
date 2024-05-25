@@ -3,47 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram WebApp</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Switch Inline Query</title>
 </head>
 <body>
-    <h1>User Information</h1>
-    <div id="user-info"></div>
-    <button id="send-data">Send Data</button>
-    <button id="go-to-mych">Каналы и Группы</button>
+    <h1>Switch Inline Query Example</h1>
+    <button id="startInlineQueryButton">Start Inline Query</button>
 
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        window.Telegram.WebApp.ready();
+        // Функция, которая создает ссылку для запуска инлайн-запроса
+        function startInlineQuery() {
+            const botUsername = '@runpaybot'; // Замените на имя пользователя вашего бота
+            const query = 'example query'; // Текст инлайн-запроса
+            const url = `https://t.me/${botUsername}?switch_inline_query=${encodeURIComponent(query)}`;
 
-        const user = window.Telegram.WebApp.initDataUnsafe.user;
-        const userInfoDiv = document.getElementById('user-info');
-        
-        if (user) {
-            userInfoDiv.innerHTML = `
-                <p>First Name: ${user.first_name}</p>
-                <p>Last Name: ${user.last_name}</p>
-                <p>Username: ${user.username}</p>
-                <p>ID: ${user.id}</p>
-            `;
+            // Открыть ссылку в новом окне или вкладке
+            window.open(url, '_blank');
         }
 
-        const sendDataButton = document.getElementById('send-data');
-        sendDataButton.addEventListener('click', () => {
-            window.Telegram.WebApp.sendData("Hello from Web App");
-        });
-
-        const goToMychButton = document.getElementById('go-to-mych');
-        goToMychButton.addEventListener('click', () => {
-            // Переход на страницу "mych"
-            window.location.href = "mych.html";
-        });
-
-        window.Telegram.WebApp.MainButton.setText("Начало работы!");
-        window.Telegram.WebApp.MainButton.show();
-        window.Telegram.WebApp.onEvent('mainButtonClicked', function() {
-            alert('Main button was clicked!');
-        });
+        document.getElementById('startInlineQueryButton').addEventListener('click', startInlineQuery);
     </script>
 </body>
 </html>
