@@ -15,19 +15,7 @@
     <script> 
         <!-- Запуск WebApp для обработки метода -->
         window.Telegram.WebApp.ready();
-
-        const user = window.Telegram.WebApp.initDataUnsafe.user;
-        const userInfoDiv = document.getElementById('user-info');
-        
-        if (user) {
-            userInfoDiv.innerHTML = `
-                <p>First Name: ${user.first_name}</p>
-                <p>Last Name: ${user.last_name}</p>
-                <p>Username: ${user.username}</p>
-                <p>ID: ${user.id}</p>
-            `;
-        }
-        
+       
         window.Telegram.WebApp.MainButton.setText("Начало работы!");
         window.Telegram.WebApp.MainButton.show();
         window.Telegram.WebApp.onEvent('mainButtonClicked', function() {
