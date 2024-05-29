@@ -16,12 +16,15 @@
         <p id="description">This is a mini app that adjusts to the Telegram theme.</p>
         <div id="user-info">userinfo</div>
         <button id="go-to-channels">Каналы и Группы</button>
+        <button id="go-to-channels">Тестовая страница</button>
     </div>
 
     <!-- Добавление кнопки в нижней части приложения -->  
     <script> 
         // Запуск WebApp для обработки метода
         Telegram.WebApp.ready();
+        // Открытие приложения на всю высоту
+        Telegram.WebApp.expand();
 
         // Включение подтверждения при закрытии мини-приложения
         Telegram.WebApp.isClosingConfirmationEnabled = true;
@@ -47,6 +50,13 @@
             window.open(url, '_blank');
         });
 
+        <!-- Добавление метода для кнопки перехода на тестовую страницу -->
+        const goToMychButton = document.getElementById('go-to-mych');
+        goToMychButton.addEventListener('click', () => {
+            // Переход на страницу "mych"
+            window.location.href = "mych.html";
+        });
+        
         Telegram.WebApp.MainButton.setText("Начало работы!");
         Telegram.WebApp.MainButton.show();
         Telegram.WebApp.onEvent('mainButtonClicked', function() {
