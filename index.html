@@ -12,6 +12,7 @@
         <h1 id="title">Hello, Telegram!</h1>
         <p id="description">This is a mini app that adjusts to the Telegram theme.</p>
         <div id="user-info">userinfo</div>
+        <button id="go-to-mych">Каналы и Группы</button>
     </div>
 
     <!-- Подключение скрипта для отображения стилей для тг приложение + ещё что-то :) -->
@@ -33,7 +34,14 @@
                 <p>ID: ${user.id}</p>
             `;
         }
-
+            
+        <!-- Добавление метода для кнопки перехода на новую страницу -->
+        const goToMychButton = document.getElementById('go-to-mych');
+        goToMychButton.addEventListener('click', () => {
+            // Переход на страницу "mych"
+            window.location.href = "mych.html";
+        });
+        
         window.Telegram.WebApp.MainButton.setText("Начало работы!");
         window.Telegram.WebApp.MainButton.show();
         window.Telegram.WebApp.onEvent('mainButtonClicked', function() {
