@@ -22,8 +22,11 @@
     
     <!-- Добавление кнопки в нижней части приложения -->  
     <script> 
-        <!-- Запуск WebApp для обработки метода -->
-        window.Telegram.WebApp.ready();
+        // Запуск WebApp для обработки метода
+        Telegram.WebApp.ready();
+
+        // Включение подтверждения при закрытии мини-приложения
+        Telegram.WebApp.isClosingConfirmationEnabled = true;
 
         const user = window.Telegram.WebApp.initDataUnsafe.user;
         const userInfoDiv = document.getElementById('user-info');
