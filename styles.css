@@ -2,4 +2,22 @@ body {
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
     secondary_bg_color: var(--tg-theme-secondary-bg-color);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#app {
+    text-align: center;
+}
+
+#title {
+    font-size: 2em;
+}
+
+#description {
+    font-size: 1.2em;
 }
