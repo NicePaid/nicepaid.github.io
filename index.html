@@ -8,6 +8,14 @@
 </head>
 <body>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        window.Telegram.WebApp.ready();
+        window.Telegram.WebApp.MainButton.setText("Начало работы!");
+        window.Telegram.WebApp.MainButton.show();
+        window.Telegram.WebApp.onEvent('mainButtonClicked', function() {
+            alert('Main button was clicked!');
+        });
+    </script>
     <div id="app">
         <h1 id="title">Hello, Telegram!</h1>
         <p id="description">This is a mini app that adjusts to the Telegram theme.</p>
