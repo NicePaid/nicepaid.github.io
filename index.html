@@ -16,11 +16,15 @@
         <p id="description">This is a mini app that adjusts to the Telegram theme.</p>
         <div id="user-info">userinfo</div>
         <button id="go-to-channels">Каналы и Группы</button>
+        <button id="go-to-mych">Тестовая страница</button>
     </div>
 
+    <!-- Добавление кнопки в нижней части приложения -->  
     <script> 
         // Запуск WebApp для обработки метода
         Telegram.WebApp.ready();
+        // Открытие приложения на всю высоту
+        Telegram.WebApp.expand();
 
         // Включение подтверждения при закрытии мини-приложения
         Telegram.WebApp.isClosingConfirmationEnabled = true;
@@ -37,53 +41,22 @@
             `;
         }
 
-        // Метод для получения и отображения каналов, где пользователь является администратором
-        async function fetchAdminChannels() {
-            const botToken = '6702682084:AAFYbcYYY5ZSL-ZErBkDN-hZ1nc81EwHFJI'; // Замените на токен вашего бота
-            const userId = user.id;
-            
-            try {
-                const response = await fetch(`https://api.telegram.org/bot${botToken}/getUpdates`);
-                const data = await response.json();
-                
-                const channels = data.result.filter(update => 
-                    update.message && update.message.chat.type === 'channel' &&
-                    update.message.from.id === userId
-                );
-
-                const channelsDiv = document.createElement('div');
-                channelsDiv.id = 'channels';
-                channelsDiv.innerHTML = '<h2>Ваши каналы:</h2>';
-                
-                channels.forEach(channel => {
-                    const channelDiv = document.createElement('div');
-                    channelDiv.className = 'channel';
-                    channelDiv.innerHTML = `
-                        <p>Название канала: ${channel.message.chat.title}</p>
-                        <button onclick="addBotToChannel('${channel.message.chat.id}')">Добавить бота</button>
-                    `;
-                    channelsDiv.appendChild(channelDiv);
-                });
-                
-                document.getElementById('app').appendChild(channelsDiv);
-            } catch (error) {
-                console.error('Ошибка при получении каналов:', error);
-            }
-        }
-
-        // Метод для добавления бота в канал
-        function addBotToChannel(channelId) {
-            const botUsername = 'NicePaidBot'; // Замените на имя вашего бота
-            const url = `https://t.me/${botUsername}?startgroup=new&admin=${channelId}`;
-            window.open(url, '_blank');
-        }
-
-        // Обработчик кнопки для перехода на страницу добавления бота в каналы и группы
+        // Добавление метода для кнопки перехода на страницу добавления бота в каналы
         const goToChannelsButton = document.getElementById('go-to-channels');
         goToChannelsButton.addEventListener('click', () => {
-            fetchAdminChannels();
+            // Открытие окна Telegram для добавления бота в каналы
+            const botUsername = "NicePaidBot"; // Замените на имя вашего бота
+            const url = `https://t.me/${botUsername}?startgroup=new`;
+            window.open(url, '_blank');
         });
 
+        <!-- Добавление метода для кнопки перехода на тестовую страницу -->
+        const goToMychButton = document.getElementById('go-to-mych');
+        goToMychButton.addEventListener('click', () => {
+            // Переход на страницу "mych"
+            window.location.href = "mych.html";
+        });
+        
         Telegram.WebApp.MainButton.setText("Начало работы!");
         Telegram.WebApp.MainButton.show();
         Telegram.WebApp.onEvent('mainButtonClicked', function() {
