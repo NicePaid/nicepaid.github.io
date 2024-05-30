@@ -59,7 +59,8 @@ button {
 }
 
 #go-to-groups {
-    background-color: #2196F3;
+    link_color: var(--tg-theme-link-color);
+    background-color: var(--tg-theme-bg-color);
     color: white;
 }
 
