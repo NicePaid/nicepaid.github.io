@@ -46,3 +46,33 @@ body {
 #description {
     font-size: 1.2em;
 }
+
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#go-to-groups {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#go-to-channels {
+    background-color: #2196F3;
+    color: white;
+}
+
+#test_page {
+    background-color: #FF5722;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
