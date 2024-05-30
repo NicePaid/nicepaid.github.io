@@ -39,7 +39,7 @@
 
         // Метод для получения и отображения каналов, где пользователь является администратором
         async function fetchAdminChannels() {
-            const botToken = 'YOUR_BOT_TOKEN'; // Замените на токен вашего бота
+            const botToken = '6702682084:AAFYbcYYY5ZSL-ZErBkDN-hZ1nc81EwHFJI'; // Замените на токен вашего бота
             const userId = user.id;
             
             try {
@@ -73,7 +73,7 @@
 
         // Метод для добавления бота в канал
         function addBotToChannel(channelId) {
-            const botUsername = 'your_bot_username'; // Замените на имя вашего бота
+            const botUsername = 'NicePaidBot'; // Замените на имя вашего бота
             const url = `https://t.me/${botUsername}?startgroup=new&admin=${channelId}`;
             window.open(url, '_blank');
         }
