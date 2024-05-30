@@ -60,8 +60,7 @@ button {
 
 #go-to-groups {
     button_color: var(--tg-theme-button-color);
-    background-color: var(--tg-theme-bg-color);
-    color: white;
+    button_text_color: var(--tg-theme-button-text-color);
 }
 
 #go-to-channels {
