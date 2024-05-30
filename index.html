@@ -17,6 +17,7 @@
         <div id="user-info">userinfo</div>
         <button id="go-to-groups">Добавить в группы</button>
         <button id="go-to-channels">Добавить в каналы</button>
+        <button id="test_page">Тестовая страница</button>
     </div>
 
     <!-- Добавление кнопки в нижней части приложения -->  
@@ -55,6 +56,13 @@
             const botUsername = "NicePaidBot"; // Замените на имя вашего бота
             const url = `https://t.me/${botUsername}?startchannel=new`;
             window.open(url, '_blank');
+        });
+
+        <!-- Добавление метода для кнопки перехода на тестовую страницу -->
+        const goToMychButton = document.getElementById('test_page');
+        goToMychButton.addEventListener('click', () => {
+            // Переход на страницу "mych"
+            window.location.href = "mych.html";
         });
 
         Telegram.WebApp.MainButton.setText("Начало работы!");
