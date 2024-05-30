@@ -50,8 +50,8 @@ button {
 }
 
 #go-to-channels {
-    background-color: #2196F3;
-    color: white;
+    button_color: var(--tg-theme-button-color);
+    button_text_color: var(--tg-theme-button-text-color);
 }
 
 #test_page {
