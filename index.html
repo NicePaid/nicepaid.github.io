@@ -15,16 +15,14 @@
         <h1 id="title">Hello, Telegram!</h1>
         <p id="description">This is a mini app that adjusts to the Telegram theme.</p>
         <div id="user-info">userinfo</div>
-        <button id="go-to-channels">Каналы и Группы</button>
-        <button id="go-to-mych">Тестовая страница</button>
+        <button id="go-to-groups">Добавить в группы</button>
+        <button id="go-to-channels">Добавить в каналы</button>
     </div>
 
     <!-- Добавление кнопки в нижней части приложения -->  
     <script> 
         // Запуск WebApp для обработки метода
         Telegram.WebApp.ready();
-        // Открытие приложения на всю высоту
-        Telegram.WebApp.expand();
 
         // Включение подтверждения при закрытии мини-приложения
         Telegram.WebApp.isClosingConfirmationEnabled = true;
@@ -41,22 +39,24 @@
             `;
         }
 
-        // Добавление метода для кнопки перехода на страницу добавления бота в каналы
-        const goToChannelsButton = document.getElementById('go-to-channels');
-        goToChannelsButton.addEventListener('click', () => {
-            // Открытие окна Telegram для добавления бота в каналы
-            const botUsername = "NicePaidBot"; // Замените на имя вашего бота
+        // Добавление метода для кнопки перехода на страницу добавления бота в группы
+        const goToGroupsButton = document.getElementById('go-to-groups');
+        goToGroupsButton.addEventListener('click', () => {
+            // Открытие окна Telegram для добавления бота в группы
+            const botUsername = "your_bot_username"; // Замените на имя вашего бота
             const url = `https://t.me/${botUsername}?startgroup=new`;
             window.open(url, '_blank');
         });
 
-        <!-- Добавление метода для кнопки перехода на тестовую страницу -->
-        const goToMychButton = document.getElementById('go-to-mych');
-        goToMychButton.addEventListener('click', () => {
-            // Переход на страницу "mych"
-            window.location.href = "mych.html";
+        // Добавление метода для кнопки перехода на страницу добавления бота в каналы
+        const goToChannelsButton = document.getElementById('go-to-channels');
+        goToChannelsButton.addEventListener('click', () => {
+            // Открытие окна Telegram для добавления бота в каналы
+            const botUsername = "your_bot_username"; // Замените на имя вашего бота
+            const url = `https://t.me/${botUsername}?startchannel=new`;
+            window.open(url, '_blank');
         });
-        
+
         Telegram.WebApp.MainButton.setText("Начало работы!");
         Telegram.WebApp.MainButton.show();
         Telegram.WebApp.onEvent('mainButtonClicked', function() {
