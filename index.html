@@ -24,6 +24,8 @@
     <script> 
         // Запуск WebApp для обработки метода
         Telegram.WebApp.ready();
+        // Открытие приложения на всю высоту
+        Telegram.WebApp.expand();
 
         // Включение подтверждения при закрытии мини-приложения
         Telegram.WebApp.isClosingConfirmationEnabled = true;
@@ -58,13 +60,14 @@
             window.open(url, '_blank');
         });
 
-        <!-- Добавление метода для кнопки перехода на тестовую страницу -->
+        // Добавление метода для кнопки перехода на тестовую страницу
         const goToMychButton = document.getElementById('test_page');
         goToMychButton.addEventListener('click', () => {
             // Переход на страницу "mych"
             window.location.href = "mych.html";
         });
 
+        // Добавление метода для главной кнопки внизу страницы
         Telegram.WebApp.MainButton.setText("Начало работы!");
         Telegram.WebApp.MainButton.show();
         Telegram.WebApp.onEvent('mainButtonClicked', function() {
