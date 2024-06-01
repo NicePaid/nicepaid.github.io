@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Подписчики!
+{% endblock %}
+
+{% block body %}
+<div class="list-group">
+  <a href="index" class="list-group-item list-group-item-action" aria-current="true">
+    Главная страница
+  </a>
+  <a href="https://t.me/RunPayBot" class="list-group-item list-group-item-action">ТелеграмБот для добавления пользователей</a>
+  <a href="subs" class="list-group-item list-group-item-action active">Пользователи</a>
+  <a href="create" class="list-group-item list-group-item-action">Добавить пользователя</a>
+</div>
+
+
+
+<div class="subs_table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">title</th>
+        <th scope="col">text</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for sub in subs %}
+      <tr>
+        <td>{{ sub.id }}</td>
+        <td>{{ sub.title }}</td>
+        <td>{{ sub.text }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock %}
