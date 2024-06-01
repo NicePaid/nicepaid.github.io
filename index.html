@@ -67,12 +67,18 @@
             window.location.href = "mych.html";
         });
 
-        // Добавление метода для главной кнопки внизу страницы
-        Telegram.WebApp.MainButton.setText("Начало работы!");
-        Telegram.WebApp.MainButton.show();
-        Telegram.WebApp.onEvent('mainButtonClicked', function() {
-            alert('Main button was clicked!');
-        });
+// Установка текста главной кнопки
+Telegram.WebApp.MainButton.setText("Начало работы!");
+
+// Отображение главной кнопки
+Telegram.WebApp.MainButton.show();
+
+// Обработка события нажатия на главную кнопку
+Telegram.WebApp.onEvent('mainButtonClicked', function() {
+    // Перенаправление на нужную ссылку
+    window.location.href = 'web-sait.html';
+});
+
     </script>
 </body>
 </html>
