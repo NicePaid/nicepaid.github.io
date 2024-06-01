@@ -1,0 +1,23 @@
+{% extends 'web-sait.html' %}
+
+{% block title %}
+Добавление записи
+{% endblock %}
+
+
+{% block body %}
+<div class="list-group">
+  <a href="index" class="list-group-item list-group-item-action" aria-current="true">
+    Главная страница
+  </a>
+  <a href="https://t.me/RunPayBot" class="list-group-item list-group-item-action">ТелеграмБот для добавления пользователей</a>
+  <a href="subs" class="list-group-item list-group-item-action">Пользователи</a>
+  <a href="create" class="list-group-item list-group-item-action active">Добавить пользователя</a>
+</div>
+<br>
+<form method="post">
+  <input type="text" name="title" placeholder="Введите Имя" class="form-control">
+  <input type="text" name="text" placeholder="Введите Отчество" class="form-control"><br>
+  <button class="btn btn-success" type="submit">Добавить</button>
+  </form>
+{% endblock %}
