@@ -59,6 +59,11 @@ button {
     color: white;
 }
 
+#web-app {
+    background-color: #2196F3;
+    color: white;
+}
+
 button:hover {
     opacity: 0.9;
 }
