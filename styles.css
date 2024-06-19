@@ -59,7 +59,7 @@ button {
     color: white;
 }
 
-#web-app {
+#web_app {
     background-color: #2196F3;
     color: white;
 }
@@ -70,7 +70,7 @@ button:hover {
 
 
 .caption-bottom {
-  width: 450px;
+  width: 350px;
   margin: 0px auto 0;
   position: relative;
 }
