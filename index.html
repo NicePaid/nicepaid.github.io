@@ -73,6 +73,13 @@
             window.location.href = "mych.html";
         });
 
+        // Добавление метода для кнопки перехода на тестовую страницу
+        const goToMychButton = document.getElementById('web_app');
+        goToMychButton.addEventListener('click', () => {
+            // Переход на страницу "web_app"
+            window.location.href = "web-app.html";
+        });
+
 // Установка текста главной кнопки
 Telegram.WebApp.MainButton.setText("Начало работы!");
 
