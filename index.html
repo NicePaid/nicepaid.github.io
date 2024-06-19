@@ -20,6 +20,7 @@
         <button id="go-to-groups">Добавить группу</button>
         <button id="go-to-channels">Добавить канал</button>
         <button id="test_page">Тестовая страница</button>
+        <button id="web-app">WebApp</button>
     <div class="caption-bottom">
         <img src="https://media1.tenor.com/m/E-XXc_BdEfkAAAAd/banner-test.gif">
     </div>      
@@ -72,6 +73,16 @@
             window.location.href = "mych.html";
         });
 
+        // Добавление метода для кнопки перехода страницу WebApp
+        const goToMychButton = document.getElementById('web-app');
+        goToMychButton.addEventListener('click', () => {
+            // Переход на страницу "web-app"
+            window.location.href = "web-app.html";
+        });
+
+
+
+        
 // Установка текста главной кнопки
 Telegram.WebApp.MainButton.setText("Начало работы!");
 
