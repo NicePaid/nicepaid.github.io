@@ -8,7 +8,9 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
     -webkit-font-smoothing: antialiased;
-}
+    header_bg_color: var(--tg-theme-header-bg-color);
+    section_bg_color: var(--tg-theme-section-bg-color);
+ }
 
 .class1 {
 
