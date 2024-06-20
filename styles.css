@@ -11,7 +11,7 @@ body {
  }
 
 .class1 {
-    background-color: var(--tg-theme-header-bg-color);
+    background-color: var(--tg-theme-bg-color);
 }
 
 .class2 {
