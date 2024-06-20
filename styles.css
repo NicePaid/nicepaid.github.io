@@ -1,5 +1,5 @@
 body {
-    background-color: var(--tg-theme-bg-color);
+    background: rgb(244, 244, 245);
     color: var(--tg-theme-text-color);
     margin: 0;
     padding: 0;
@@ -11,18 +11,19 @@ body {
  }
 
 .class1 {
-
+    background-color: var(--tg-theme-bg-color);
 }
 
 .class2 {
-    
+    background-color: var(--tg-theme-bg-color);    
 }
 
 .class3 {
-    
+    background-color: var(--tg-theme-bg-color);    
 }
 
 .class4 {
+    background-color: var(--tg-theme-bg-color);
     margin-top: 10px;
 }
 
