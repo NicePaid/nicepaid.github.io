@@ -1,22 +1,10 @@
 body {
     background-color: var(--tg-theme-bg-color);
-    text_color: var(--tg-theme-text-color);
-    hint_color: var(--tg-theme-hint-color);
-    link_color: var(--tg-theme-link-color);
-    button_color: var(--tg-theme-button-color);
-    button_text_color: var(--tg-theme-button-text-color);
-    header_bg_color: var(--tg-theme-header-bg-color);
-    accent_text_color: var(--tg-theme-accent-text-color);
-    section_bg_color: var(--tg-theme-section-bg-color);
-    section_header_text_color: var(--tg-theme-section-header-text-color);
-    subtitle_text_color: var(--tg-theme-subtitle-text-color);
-    destructive_text_color: var(--tg-theme-destructive-text-color);
     color: var(--tg-theme-text-color);
-    secondary_bg_color: var(--tg-theme-secondary-bg-color);
-    font-family: Arial, sans-serif;
-    display: block;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    display: block;
     -ms-overflow-style: none;
     scrollbar-width: none;
     -webkit-font-smoothing: antialiased;
@@ -41,41 +29,29 @@ button {
     margin: 10px 0;
     font-size: 16px;
     border: none;
-    border-radius: 1px;
+    border-radius: 5px;
     cursor: pointer;
-}
-
-#go-to-groups {
-    button_color: var(--tg-theme-button-color);
-    button_text_color: var(--tg-theme-button-text-color);
-}
-
-#go-to-channels {
-    button_color: var(--tg-theme-button-color);
-    button_text_color: var(--tg-theme-button-text-color);
-}
-
-#test_page {
-    background-color: #2196F3;
-    color: white;
-}
-
-#web_app {
-    background-color: #2196F3;
-    color: white;
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
 }
 
 button:hover {
     opacity: 0.9;
 }
 
+#test_page,
+#web_app {
+    background-color: #2196F3;
+    color: white;
+}
 
 .caption-bottom {
-  width: 350px;
-  margin: 0px auto 0;
+    width: 350px;
+    margin: 0px auto;
 }
+
 .caption-bottom img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
