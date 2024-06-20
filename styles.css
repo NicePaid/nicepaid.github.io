@@ -27,10 +27,9 @@ button {
     display: block;
     width: 100%;
     padding: 15px;
-    margin: 10px 0;
+    margin: 0;
     font-size: 16px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     background-color: var(--tg-theme-button-color);
     color: var(--tg-theme-button-text-color);
