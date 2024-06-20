@@ -63,7 +63,7 @@ button:hover {
 
 .caption-bottom {
     width: 350px;
-    margin-top: 10px;
+    margin: 10px auto;
 }
 
 .caption-bottom img {
