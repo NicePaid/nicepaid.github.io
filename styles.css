@@ -30,7 +30,6 @@ body {
     border: none;
     height: 1px;
     background-color: var(--tg-theme-text-color);
-    margin: 20px 0;
 }
 
 #app {
