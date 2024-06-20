@@ -23,7 +23,7 @@ body {
 }
 
 #class4 {
-    
+    margin-top: 10px;    
 }
 
 #app {
@@ -63,7 +63,7 @@ button:hover {
 
 .caption-bottom {
     width: 350px;
-    margin: 0px auto;
+    margin-top: 10px;
 }
 
 .caption-bottom img {
