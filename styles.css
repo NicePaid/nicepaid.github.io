@@ -1,3 +1,5 @@
+background: rgb(244, 244, 245);
+
 body {
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
