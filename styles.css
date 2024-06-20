@@ -9,8 +9,8 @@ body {
     scrollbar-width: none;
     -webkit-font-smoothing: antialiased;
     header_bg_color: var(--tg-theme-header-bg-color);
-    section_bg_color: #ededed;
-    secondary_bg_color: var(--tg-theme-secondary-bg-color);
+    section_bg_color: var(--tg-theme-section-bg-color);
+    secondary_bg_color: #ededed;
  }
 
 .class1 {
