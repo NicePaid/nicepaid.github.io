@@ -1,69 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>GeoApp</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <title>Telegram Mini App with ThemeParams</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <!-- Скрипт для подключения мини-приложения к клиенту Telegram -->
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="/script.js" defer></script>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-        }
-        #map {
-            flex: 1;
-            width: 100%;
-        }
-        #menu {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background-color: #4CAF50;
-            color: white;
-            height: 50px;
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-            border-top: 1px solid #ddd;
-        }
-        .menu-item {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
-            cursor: pointer;
-        }
-        .menu-item:hover {
-            background-color: #45a049;
-        }
-    </style>
 </head>
+
+<!-- Тело приложения frontend -->
+    
 <body>
-    <div id="map"></div>
-    <div id="menu">
-        <div class="menu-item" onclick="navigateTo('subscription')">Подписка</div>
-        <div class="menu-item" onclick="navigateTo('map')">Карта</div>
-        <div class="menu-item" onclick="navigateTo('profile')">Профиль</div>
+    <div id="app">
+        <!-- Содержимое первого div -->
+        <div class="class1">
+            <h1 id="title">Hello, My Boy!!</h1>
+            <p id="description">This is a mini app that adjusts to the Telegram theme.</p>
+        </div>
+        <!-- Содержимое второго div -->
+        <div class="class2">
+            <div id="user-info">userinfo</div>
+        </div>
+        <!-- Содержимое первого section -->
+        <section class="LySH rAGF">
+            <button id="go-to-groups">Добавить группу</button>
+            <div class="separator"></div>
+            <button id="go-to-channels">Добавить канал</button>
+        </section>
+        <!-- Содержимое второго section -->
+        <section class="class4">
+            <button id="test_page">Тестовая страница</button>
+            <div class="separator"></div>
+            <button id="web_app">WebApp</button>
+        </section>
+        <!-- Содержимое медиа div -->
+        <div class="caption-bottom">
+            <img src="https://media1.tenor.com/m/E-XXc_BdEfkAAAAd/banner-test.gif">
+        </div>      
     </div>
 
-    <script>
-        window.Telegram.WebApp.ready();
+    <!-- Добавление кнопки в нижней части приложения -->  
+    <script> 
+        // Запуск WebApp для обработки метода
+        Telegram.WebApp.ready();
+        // Открытие приложения на всю высоту
+        Telegram.WebApp.expand();
 
-        var BackButton = window.Telegram.WebApp.BackButton;
-        BackButton.show();
-        BackButton.onClick(function() {
-            window.Telegram.WebApp.showAlert("BackButton clicked");
-            BackButton.hide();
+        // Включение подтверждения при закрытии мини-приложения
+        Telegram.WebApp.isClosingConfirmationEnabled = true;
+
+        const user = Telegram.WebApp.initDataUnsafe.user;
+        const userInfoDiv = document.getElementById('user-info');
+        
+        if (user) {
+            userInfoDiv.innerHTML = `
+                <p>First Name: ${user.first_name}</p>
+                <p>Last Name: ${user.last_name}</p>
+                <p>Username: ${user.username}</p>
+                <p>ID: ${user.id}</p>
+            `;
+        }
+
+        // Добавление метода для кнопки перехода на страницу добавления бота в группы
+        const goToGroupsButton = document.getElementById('go-to-groups');
+        goToGroupsButton.addEventListener('click', () => {
+            // Открытие окна Telegram для добавления бота в группы
+            const botUsername = "NicePaidBot"; // Замените на имя вашего бота
+            const url = `https://t.me/${botUsername}?startgroup=new`;
+            window.open(url, '_blank');
         });
 
-        window.Telegram.WebApp.onEvent('backButtonClicked', function() {
-            history.back();
+        // Добавление метода для кнопки перехода на страницу добавления бота в каналы
+        const goToChannelsButton = document.getElementById('go-to-channels');
+        goToChannelsButton.addEventListener('click', () => {
+            // Открытие окна Telegram для добавления бота в каналы
+            const botUsername = "NicePaidBot"; // Замените на имя вашего бота
+            const url = `https://t.me/${botUsername}?startchannel=new`;
+            window.open(url, '_blank');
         });
+
+        // Добавление метода для кнопки перехода на тестовую страницу
+        const goToMychButton = document.getElementById('test_page');
+        goToMychButton.addEventListener('click', () => {
+            // Переход на страницу "mych"
+            window.location.href = "mych.html";
+        });
+
+        // Добавление метода для кнопки перехода на тестовую страницу
+        const goToMyWebButton = document.getElementById('web_app');
+        goToMyWebButton.addEventListener('click', () => {
+            // Переход на страницу "web_app"
+            window.location.href = "web_map.html";
+        });
+
+// Установка текста главной кнопки
+Telegram.WebApp.MainButton.setText("Начало работы!");
+
+// Отображение главной кнопки
+Telegram.WebApp.MainButton.show();
+
+// Обработка события нажатия на главную кнопку
+Telegram.WebApp.onEvent('mainButtonClicked', function() {
+    // Перенаправление на нужную ссылку
+    window.location.href = 'web-sait.html';
+});
+
     </script>
 </body>
 </html>
