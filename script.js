@@ -17,6 +17,22 @@ function initMap() {
         }
     });
 
+    map.controls.add('typeSelector', {
+        float: 'none',
+        position: {
+            bottom: 50,
+            left: 10
+        }
+    });
+
+    map.controls.add('geolocationControl', {
+        float: 'none',
+        position: {
+            bottom: 100,
+            right: 10
+        }
+    });
+
     // Загрузка пользователей и отображение их на карте
     fetch('/users')
         .then(response => response.json())
@@ -32,6 +48,9 @@ function initMap() {
             console.error('Error fetching users:', error);
             alert('An error occurred while fetching users.');
         });
+
+    // Определение местоположения пользователя
+    getLocation();
 }
 
 function getLocation() {
