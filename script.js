@@ -21,7 +21,11 @@ function initMap() {
 
 function getLocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
+        navigator.geolocation.getCurrentPosition(showPosition, showError, {
+            enableHighAccuracy: true, 
+            timeout: 5000, 
+            maximumAge: 0
+        });
     } else {
         alert("Geolocation is not supported by this browser.");
     }
@@ -58,6 +62,9 @@ function showPosition(position) {
 
                   map.setCenter([lat, lng], 12);
               }
+          }).catch(error => {
+              console.error("Error:", error);
+              alert("An error occurred while saving your location.");
           });
     }
 }
