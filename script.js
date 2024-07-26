@@ -7,29 +7,29 @@ function initMap() {
         controls: [] // Убираем все элементы управления
     });
 
-    // Добавляем свои элементы управления
+    // Добавляем свои элементы управления с позиционированием
     map.controls.add('zoomControl', {
         size: 'small',
         float: 'none',
         position: {
-            bottom: 50,
-            right: 10
+            right: 10,
+            top: 50
         }
     });
 
     map.controls.add('typeSelector', {
         float: 'none',
         position: {
-            bottom: 50,
-            left: 10
+            right: 10,
+            top: 110
         }
     });
 
     map.controls.add('geolocationControl', {
         float: 'none',
         position: {
-            bottom: 100,
-            right: 10
+            right: 10,
+            top: 170
         }
     });
 
