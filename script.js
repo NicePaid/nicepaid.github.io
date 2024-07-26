@@ -19,4 +19,47 @@ function initMap() {
         });
 }
 
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+
+function showPosition(position) {
+    const lat = position.coords.latitude;
+    const lng = position.coords.longitude;
+
+    const description = prompt("Enter a description for your location:");
+
+    if (description) {
+        fetch('/create-profile', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: "Your Name", // Поменяйте на ввод имени пользователя
+                gender: "Your Gender", // Поменяйте на ввод пола пользователя
+                age: 25, // Поменяйте на ввод возраста пользователя
+                interests: "Your Interests", // Поменяйте на ввод интересов пользователя
+                lat: lat,
+                lng: lng,
+                description: description
+            })
+        }).then(response => response.json())
+          .then(data => {
+              if (data.success) {
+                  const placemark = new ymaps.Placemark([lat, lng], {
+                      balloonContent: `<h3>Your Name</h3><p>${description}</p>` // Поменяйте на ввод имени пользователя
+                  });
+                  map.geoObjects.add(placemark);
+
+                  map.setCenter([lat, lng], 12);
+              }
+          });
+    }
+}
+
 ymaps.ready(initMap);
