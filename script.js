@@ -110,4 +110,9 @@ function showError(error) {
     alert(errorMessage);
 }
 
+function navigateTo(page) {
+    alert(`Navigating to ${page}`);
+    // Здесь можно добавить логику для перехода на соответствующие страницы или отображения соответствующих разделов.
+}
+
 ymaps.ready(initMap);
