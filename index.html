@@ -10,8 +10,6 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 
-<!-- Тело приложения frontend -->
-    
 <body>
     <div id="app">
         <!-- Содержимое первого div -->
@@ -42,7 +40,7 @@
     </div>
 
     <!-- Добавление кнопки в нижней части приложения -->  
-    <script> 
+    <script>
         // Запуск WebApp для обработки метода
         Telegram.WebApp.ready();
         // Открытие приложения на всю высоту
@@ -60,9 +58,27 @@
                 <p>Last Name: ${user.last_name}</p>
                 <p>Username: ${user.username}</p>
                 <p>ID: ${user.id}</p>
-                <p>Chat ID: ${user.id}</p>
             `;
         }
+
+        // Получение идентификатора чата
+        const getChatId = () => {
+            return new Promise((resolve, reject) => {
+                Telegram.WebApp.getChat(function(chat) {
+                    if (chat) {
+                        resolve(chat.id);
+                    } else {
+                        reject("Chat ID not available");
+                    }
+                });
+            });
+        };
+
+        getChatId().then(chatId => {
+            userInfoDiv.innerHTML += `<p>Chat ID: ${chatId}</p>`;
+        }).catch(error => {
+            console.error(error);
+        });
 
         // Добавление метода для кнопки перехода на страницу добавления бота в группы
         const goToGroupsButton = document.getElementById('go-to-groups');
@@ -83,30 +99,30 @@
         });
 
         // Добавление метода для кнопки перехода на тестовую страницу
-        const goToMychButton = document.getElementById('test_page');
-        goToMychButton.addEventListener('click', () => {
-            // Переход на страницу "mych"
-            window.location.href = "mych.html";
+        const goToTestPageButton = document.getElementById('test_page');
+        goToTestPageButton.addEventListener('click', () => {
+            // Переход на страницу "test_page"
+            window.location.href = "test_page.html";
         });
 
-        // Добавление метода для кнопки перехода на тестовую страницу
-        const goToMyWebButton = document.getElementById('web_app');
-        goToMyWebButton.addEventListener('click', () => {
+        // Добавление метода для кнопки перехода на web_app страницу
+        const goToWebAppButton = document.getElementById('web_app');
+        goToWebAppButton.addEventListener('click', () => {
             // Переход на страницу "web_app"
-            window.location.href = "web_map.html";
+            window.location.href = "web_app.html";
         });
 
-// Установка текста главной кнопки
-Telegram.WebApp.MainButton.setText("Начало работы!");
+        // Установка текста главной кнопки
+        Telegram.WebApp.MainButton.setText("Начало работы!");
 
-// Отображение главной кнопки
-Telegram.WebApp.MainButton.show();
+        // Отображение главной кнопки
+        Telegram.WebApp.MainButton.show();
 
-// Обработка события нажатия на главную кнопку
-Telegram.WebApp.onEvent('mainButtonClicked', function() {
-    // Перенаправление на нужную ссылку
-    window.location.href = 'web-sait.html';
-});
+        // Обработка события нажатия на главную кнопку
+        Telegram.WebApp.onEvent('mainButtonClicked', function() {
+            // Перенаправление на нужную ссылку
+            window.location.href = 'web-site.html';
+        });
 
     </script>
 </body>
