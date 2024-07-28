@@ -58,27 +58,9 @@
                 <p>Last Name: ${user.last_name}</p>
                 <p>Username: ${user.username}</p>
                 <p>ID: ${user.id}</p>
+                <p>Chat ID: ${chatId}</p>
             `;
         }
-
-        // Получение идентификатора чата
-        const getChatId = () => {
-            return new Promise((resolve, reject) => {
-                Telegram.WebApp.getChat(function(chat) {
-                    if (chat) {
-                        resolve(chat.id);
-                    } else {
-                        reject("Chat ID not available");
-                    }
-                });
-            });
-        };
-
-        getChatId().then(chatId => {
-            userInfoDiv.innerHTML += `<p>Chat ID: ${chatId}</p>`;
-        }).catch(error => {
-            console.error(error);
-        });
 
         // Добавление метода для кнопки перехода на страницу добавления бота в группы
         const goToGroupsButton = document.getElementById('go-to-groups');
